@@ -1,6 +1,6 @@
 import { ArrowDown, CheckCircle2, Sparkles, Shield, Clock } from 'lucide-react';
 import { useState, FormEvent } from 'react';
-import { supabase } from '../lib/supabase';
+//import { supabase } from '../lib/supabase';
 
 export default function LandingPage() {
   const [formData, setFormData] = useState({
