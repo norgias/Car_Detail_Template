@@ -26,7 +26,7 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
             style={{ fontFamily: "'Russo One', sans-serif" }}
             onClick={() => onNavigate('home')}
           >
-            ELITE DETAILING
+            VROOM AUTO DETAIL
           </div>
 
           <div className="hidden md:flex items-center space-x-8">
