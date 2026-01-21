@@ -1,5 +1,5 @@
-import site from 'Car_Detail_Template/content/site.json';
-import servicesData from 'Car_Detail_Template/content/services.json';
+import site from '.../.../site.json';
+import servicesData from '.../.../services.json';
 import { ArrowDown, CheckCircle2, Sparkles, Shield, Clock } from 'lucide-react';
 import { useState, FormEvent } from 'react';
 //import { supabase } from '../lib/supabase';
