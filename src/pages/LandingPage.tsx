@@ -1,3 +1,5 @@
+import site from '../../content/site.json';
+import servicesData from '../../content/services.json';
 import { ArrowDown, CheckCircle2, Sparkles, Shield, Clock } from 'lucide-react';
 import { useState, FormEvent } from 'react';
 //import { supabase } from '../lib/supabase';
@@ -49,7 +51,7 @@ export default function LandingPage() {
     }
   };
 
-  const services = [
+  /*const services = [
     {
       name: 'Basic Detail',
       price: '$149',
@@ -89,7 +91,7 @@ export default function LandingPage() {
         '6-month protection guarantee',
       ],
     },
-  ];
+  ];*/
 
   return (
     <div className="bg-black text-white">
