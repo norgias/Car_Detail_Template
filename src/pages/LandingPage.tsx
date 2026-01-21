@@ -111,7 +111,8 @@ const handleSubmit = async (e: FormEvent) => {
             className="text-5xl md:text-7xl font-bold mb-6 text-yellow-400 animate-fade-in"
             style={{ fontFamily: "'Russo One', sans-serif" }}
           >
-            PREMIUM CAR DETAILING
+            {site.hero.headline}
+
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-white max-w-3xl mx-auto">
             Experience the ultimate in automotive care. We transform your vehicle
