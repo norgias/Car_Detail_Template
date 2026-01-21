@@ -26,19 +26,28 @@ const handleSubmit = async (e: FormEvent) => {
   e.preventDefault();
   setIsSubmitting(true);
 
-  setTimeout(() => {
+  try {
+    // TEMP: no backend yet
+    console.log("Form submitted:", formData);
+
     setSubmitSuccess(true);
     setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      preferred_datetime: '',
-      message: '',
+      name: "",
+      email: "",
+      phone: "",
+      preferred_datetime: "",
+      message: "",
     });
-    setIsSubmitting(false);
+
     setTimeout(() => setSubmitSuccess(false), 5000);
-  }, 1000);
+  } catch (error) {
+    console.error("Error submitting form:", error);
+    alert("There was an error submitting your request. Please try again.");
+  } finally {
+    setIsSubmitting(false);
+  }
 };
+
 
 
       setTimeout(() => setSubmitSuccess(false), 5000);
