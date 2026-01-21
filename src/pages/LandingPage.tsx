@@ -51,6 +51,8 @@ export default function LandingPage() {
     }
   };
 
+  const services = servicesData.services;
+
   /*const services = [
     {
       name: 'Basic Detail',
