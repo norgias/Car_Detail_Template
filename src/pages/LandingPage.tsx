@@ -22,25 +22,24 @@ export default function LandingPage() {
     }
   };
 
-  const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+const handleSubmit = async (e: FormEvent) => {
+  e.preventDefault();
+  setIsSubmitting(true);
 
-    try {
-      const { error } = await supabase
-        .from('contact_submissions')
-        .insert([formData]);
+  setTimeout(() => {
+    setSubmitSuccess(true);
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      preferred_datetime: '',
+      message: '',
+    });
+    setIsSubmitting(false);
+    setTimeout(() => setSubmitSuccess(false), 5000);
+  }, 1000);
+};
 
-      if (error) throw error;
-
-      setSubmitSuccess(true);
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        preferred_datetime: '',
-        message: '',
-      });
 
       setTimeout(() => setSubmitSuccess(false), 5000);
     } catch (error) {
