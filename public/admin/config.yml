@@ -48,4 +48,3 @@ collections:
                 name: "features"
                 widget: "list"
                 field: { label: "Feature", name: "feature", widget: "string" }
-
