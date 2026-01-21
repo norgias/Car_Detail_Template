@@ -115,15 +115,13 @@ const handleSubmit = async (e: FormEvent) => {
 
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-white max-w-3xl mx-auto">
-            Experience the ultimate in automotive care. We transform your vehicle
-            into a showroom masterpiece with precision, passion, and unmatched
-            attention to detail.
+            {site.hero.subheadline}
           </p>
           <button
             onClick={scrollToContact}
             className="bg-yellow-400 text-black px-8 py-4 rounded-lg font-bold text-lg hover:bg-yellow-500 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-yellow-400/50"
           >
-            BOOK YOUR DETAIL
+            {site.hero.cta}
           </button>
           <div className="mt-12 animate-bounce">
             <ArrowDown className="mx-auto text-yellow-400" size={32} />
@@ -244,11 +242,10 @@ const handleSubmit = async (e: FormEvent) => {
             className="text-4xl md:text-5xl font-bold text-center mb-4 text-yellow-400"
             style={{ fontFamily: "'Russo One', sans-serif" }}
           >
-            GET IN TOUCH
+            {site.contact.heading}
           </h2>
           <p className="text-center text-xl text-gray-300 mb-12">
-            Ready to give your car the treatment it deserves? Let us know when
-            you'd like your car detailed!
+            {site.contact.intro}
           </p>
           {submitSuccess && (
             <div className="bg-yellow-400 text-black p-4 rounded-lg mb-6 text-center font-bold">
