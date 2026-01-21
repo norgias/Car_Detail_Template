@@ -1,0 +1,45 @@
+{
+  "services": [
+    {
+      "name": "Basic Detail",
+      "price": "$149",
+      "featured": false,
+      "features": [
+        "Exterior hand wash & dry",
+        "Wheel & tire cleaning",
+        "Interior vacuum",
+        "Dashboard & console wipe",
+        "Window cleaning (inside & out)"
+      ]
+    },
+    {
+      "name": "Premium Detail",
+      "price": "$299",
+      "featured": true,
+      "features": [
+        "Everything in Basic Detail",
+        "Clay bar treatment",
+        "Paint sealant application",
+        "Leather conditioning",
+        "Deep carpet & upholstery cleaning",
+        "Engine bay cleaning",
+        "Headlight restoration"
+      ]
+    },
+    {
+      "name": "Ultimate Detail",
+      "price": "$499",
+      "featured": false,
+      "features": [
+        "Everything in Premium Detail",
+        "Paint correction & buffing",
+        "Ceramic coating application",
+        "Full interior detailing",
+        "Odor elimination treatment",
+        "Chrome polishing",
+        "Scratch removal",
+        "6-month protection guarantee"
+      ]
+    }
+  ]
+}
