@@ -1,8 +1,8 @@
-import site from '.../.../site.json';
-import servicesData from '.../.../services.json';
+import site from '../../content/site.json';
+import servicesData from '../../content/services.json';
 import { ArrowDown, CheckCircle2, Sparkles, Shield, Clock } from 'lucide-react';
 import { useState, FormEvent } from 'react';
-//import { supabase } from '../lib/supabase';
+// import { supabase } from '../lib/supabase';
 
 export default function LandingPage() {
   const [formData, setFormData] = useState({
@@ -22,86 +22,33 @@ export default function LandingPage() {
     }
   };
 
-const handleSubmit = async (e: FormEvent) => {
-  e.preventDefault();
-  setIsSubmitting(true);
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
 
-  try {
-    // TEMP: no backend yet
-    console.log("Form submitted:", formData);
+    try {
+      // TEMP: no backend yet
+      console.log('Form submitted:', formData);
 
-    setSubmitSuccess(true);
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      preferred_datetime: "",
-      message: "",
-    });
+      setSubmitSuccess(true);
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        preferred_datetime: '',
+        message: '',
+      });
 
-  /*  setTimeout(() => setSubmitSuccess(false), 5000);
-  } catch (error) {
-    console.error("Error submitting form:", error);
-    alert("There was an error submitting your request. Please try again.");
-  } finally {
-    setIsSubmitting(false);
-  }
-}; */
-
-
-
-     /* setTimeout(() => setSubmitSuccess(false), 5000);
+      setTimeout(() => setSubmitSuccess(false), 5000);
     } catch (error) {
       console.error('Error submitting form:', error);
       alert('There was an error submitting your request. Please try again.');
     } finally {
       setIsSubmitting(false);
     }
-  }; */
+  };
 
   const services = servicesData.services;
-
-  /*const services = [
-    {
-      name: 'Basic Detail',
-      price: '$149',
-      features: [
-        'Exterior hand wash & dry',
-        'Wheel & tire cleaning',
-        'Interior vacuum',
-        'Dashboard & console wipe',
-        'Window cleaning (inside & out)',
-      ],
-    },
-    {
-      name: 'Premium Detail',
-      price: '$299',
-      features: [
-        'Everything in Basic Detail',
-        'Clay bar treatment',
-        'Paint sealant application',
-        'Leather conditioning',
-        'Deep carpet & upholstery cleaning',
-        'Engine bay cleaning',
-        'Headlight restoration',
-      ],
-      featured: true,
-    },
-    {
-      name: 'Ultimate Detail',
-      price: '$499',
-      features: [
-        'Everything in Premium Detail',
-        'Paint correction & buffing',
-        'Ceramic coating application',
-        'Full interior detailing',
-        'Odor elimination treatment',
-        'Chrome polishing',
-        'Scratch removal',
-        '6-month protection guarantee',
-      ],
-    },
-  ];*/
 
   return (
     <div className="bg-black text-white">
@@ -121,7 +68,6 @@ const handleSubmit = async (e: FormEvent) => {
             style={{ fontFamily: "'Russo One', sans-serif" }}
           >
             {site.hero.headline}
-
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-white max-w-3xl mx-auto">
             {site.hero.subheadline}
@@ -200,10 +146,10 @@ const handleSubmit = async (e: FormEvent) => {
             SERVICE PACKAGES
           </h2>
           <p className="text-center text-gray-300 mb-12 text-lg">
-            Choose the perfect package for your vehicle's needs
+            Choose the perfect package for your vehicle&apos;s needs
           </p>
           <div className="grid md:grid-cols-3 gap-8">
-            {services.map((service, index) => (
+            {services.map((service: any, index: number) => (
               <div
                 key={index}
                 className={`bg-gray-800 rounded-lg p-8 border-2 ${
@@ -229,7 +175,7 @@ const handleSubmit = async (e: FormEvent) => {
                   </span>
                 </div>
                 <ul className="space-y-3">
-                  {service.features.map((feature, idx) => (
+                  {service.features.map((feature: string, idx: number) => (
                     <li key={idx} className="flex items-start">
                       <CheckCircle2
                         className="text-yellow-400 mr-3 flex-shrink-0 mt-1"
@@ -258,51 +204,39 @@ const handleSubmit = async (e: FormEvent) => {
           </p>
           {submitSuccess && (
             <div className="bg-yellow-400 text-black p-4 rounded-lg mb-6 text-center font-bold">
-              Thank you! We'll contact you shortly to confirm your appointment.
+              {site.contact.successMessage || "Thank you! We'll contact you shortly to confirm your appointment."}
             </div>
           )}
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label className="block text-yellow-400 mb-2 font-bold">
-                Name
-              </label>
+              <label className="block text-yellow-400 mb-2 font-bold">Name</label>
               <input
                 type="text"
                 required
                 value={formData.name}
-                onChange={(e) =>
-                  setFormData({ ...formData, name: e.target.value })
-                }
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-yellow-400 text-white"
                 placeholder="Your full name"
               />
             </div>
             <div>
-              <label className="block text-yellow-400 mb-2 font-bold">
-                Email
-              </label>
+              <label className="block text-yellow-400 mb-2 font-bold">Email</label>
               <input
                 type="email"
                 required
                 value={formData.email}
-                onChange={(e) =>
-                  setFormData({ ...formData, email: e.target.value })
-                }
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-yellow-400 text-white"
                 placeholder="your.email@example.com"
               />
             </div>
             <div>
-              <label className="block text-yellow-400 mb-2 font-bold">
-                Phone Number
-              </label>
+              <label className="block text-yellow-400 mb-2 font-bold">Phone Number</label>
               <input
                 type="tel"
                 required
                 value={formData.phone}
-                onChange={(e) =>
-                  setFormData({ ...formData, phone: e.target.value })
-                }
+                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                 className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-yellow-400 text-white"
                 placeholder="(555) 123-4567"
               />
@@ -323,15 +257,11 @@ const handleSubmit = async (e: FormEvent) => {
               />
             </div>
             <div>
-              <label className="block text-yellow-400 mb-2 font-bold">
-                Message
-              </label>
+              <label className="block text-yellow-400 mb-2 font-bold">Message</label>
               <textarea
                 rows={4}
                 value={formData.message}
-                onChange={(e) =>
-                  setFormData({ ...formData, message: e.target.value })
-                }
+                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-yellow-400 text-white"
                 placeholder="Tell us about your vehicle and any special requirements..."
               ></textarea>
